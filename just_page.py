@@ -46,7 +46,7 @@ def image():
 @app.route('/promotion_image')
 def promotion2():
     pr_list = lines
-    url_pic = url_for('static', filename='img/riana.png')
+    url_pic = url_for('static', filename='img/mars.gif')
     url_style = url_for('static', filename='css/style.css')
     return """<!doctype html>
             <html lang="en">
