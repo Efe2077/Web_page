@@ -91,5 +91,41 @@ def promotion2():
             """.format(url_style, url_pic,  *pr_list)
 
 
+@app.route('/choice/<planet_name>')
+def print_inp(planet_name):
+    return """<!doctype html>
+            <html lang="en">
+              <head>
+                <meta charset="utf-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+                <link rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" 
+                integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" 
+                crossorigin="anonymous">
+                <title>Варианты выбора</title>
+              </head>
+              <body>
+                </div>
+                    <h2>Мое предположение: {}</h2>
+                </div>
+                    <h3>Эта планета близка к Земле;</h3>
+                <div/>
+                <div class="alert-success" role="alert">
+                    <br><h3>На ней много необходимых ресурсов;</h3>
+                </div>
+                <div class="alert-secondary" role="alert">
+                    <br><h3>На ней есть вода и атмосфера;</h3>
+                </div>
+                <div class="alert-warning" role="alert">
+                    <br><h3>На ней есть небольшое магнитное поле;</h3>
+                </div>
+                <div class="alert-danger" role="alert">
+                    <br><h3>Наконец, она просто красива!</h3>
+                </div>
+              </body>
+            </html>
+            """.format(planet_name)
+
+
 if __name__ == '__main__':
     app.run(port=8080, host='127.0.0.1')
