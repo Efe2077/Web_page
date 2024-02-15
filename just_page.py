@@ -127,5 +127,37 @@ def print_inp(planet_name):
             """.format(planet_name)
 
 
+@app.route('/results/<nickname>/<int:level>/<float:rating>')
+def results(nickname, level, rating):
+    return """<!doctype html>
+                <html lang="en">
+                  <head>
+                    <meta charset="utf-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+                    <link rel="stylesheet" 
+                    href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" 
+                    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" 
+                    crossorigin="anonymous">
+                    <title>Результаты</title>
+                  </head>
+                  <body>
+                    </div>
+                        <h2>Результаты отбора</h2>
+                    </div>
+                        <h3>Претенденты на участие в миссии {}:</h3>
+                    <div/>
+                    <div class="alert-success" role="alert">
+                        <br><h3>Поздравляем! Ваш рейтинг после {} этапа отбора</h3>
+                    </div>
+                        <br><h3>составляет {}!</h3>
+                    </div>
+                    <div class="alert-warning" role="alert">
+                        <br><h3>Желаем удачи!</h3>
+                    </div>
+                  </body>
+                </html>
+                """.format(nickname, level, rating)
+
+
 if __name__ == '__main__':
     app.run(port=8080, host='127.0.0.1')
