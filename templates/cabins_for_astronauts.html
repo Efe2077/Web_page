@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<meta charset="UTF-8">
+<h2 align="center">Размещение по каютам</h2>
+<br>
+{% for person in list_of_astronauts %}
+    {% set number = loop.index %} <!--Каюта №-->
+    {% if number == 1 %}
+        <h4 style="font-weight: 400" align="center">{{ person }} - Каюта № {{ number }} - капитан корабля</h4>
+    {% else %}
+        <h4 style="font-weight: 400" align="center">{{ person }} - Каюта № {{ number }}</h4>
+    {% endif %}
+{% endfor %}
+{% endblock %}
